@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+
+metadata:
+  name: orders-api
+  title: Orders API
+  description: Orders management service used for the Platform Engineering demo
+
+  annotations:
+    github.com/project-slug: Badereddine-eng/platform-engineering-demo
+
+  links:
+    - url: http://orders.localhost:8080/orders
+      title: Orders API
+      icon: web
+
+    - url: https://github.com/Badereddine-eng/platform-engineering-demo
+      title: Source Code
+      icon: github
+
+spec:
+  type: service
+  lifecycle: production
+  owner: guests
