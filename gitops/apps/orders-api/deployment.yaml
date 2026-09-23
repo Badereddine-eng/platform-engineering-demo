@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: orders-api
-          image: ghcr.io/badereddine-eng/orders-api:71288fe86338c803fcca3d29cbd4b44213c8d8b7
+          image: ghcr.io/badereddine-eng/orders-api:e0862a245202225d2814e624af280a3d1ee3e762
           imagePullPolicy: IfNotPresent
 
           ports:
