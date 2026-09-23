@@ -29,7 +29,8 @@ public class OrderController {
         return List.of(
                 new Order(1L, "Laptop", 1),
                 new Order(2L, "Keyboard", 2),
-                new Order(3L, "Monitor", 1)
+                new Order(3L, "Monitor", 1),
+                new Order(4L, "Headset", 1)
         );
     }
 }
