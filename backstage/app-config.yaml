@@ -217,9 +217,11 @@ catalog:
     #     - allow: [User, Group]
 
 kubernetes:
-  # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
+  serviceLocatorMethod:
+    type: multiTenant
 
-# see https://backstage.io/docs/permissions/getting-started for more on the permission framework
+  clusterLocatorMethods:
+    - type: localKubectlProxy
 permission:
   # setting this to `false` will disable permissions
   enabled: true

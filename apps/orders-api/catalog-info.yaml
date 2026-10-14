@@ -8,6 +8,8 @@ metadata:
 
   annotations:
     github.com/project-slug: Badereddine-eng/platform-engineering-demo
+    backstage.io/kubernetes-label-selector: 'app.kubernetes.io/name=orders-api'
+    backstage.io/kubernetes-namespace: orders
 
   links:
     - url: http://orders.localhost:8080/orders
@@ -21,4 +23,5 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: guests
+  owner: orders-team
+  system: ecommerce-platform
