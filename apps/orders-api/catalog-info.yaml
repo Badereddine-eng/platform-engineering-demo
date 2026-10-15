@@ -10,6 +10,12 @@ metadata:
     github.com/project-slug: Badereddine-eng/platform-engineering-demo
     backstage.io/kubernetes-label-selector: 'app.kubernetes.io/name=orders-api'
     backstage.io/kubernetes-namespace: orders
+  
+  tags:
+    - java
+    - spring-boot
+    - kubernetes
+    - gitops
 
   links:
     - url: http://orders.localhost:8080/orders
@@ -25,3 +31,38 @@ spec:
   lifecycle: production
   owner: orders-team
   system: ecommerce-platform
+  providesApis:
+    - orders-api
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: orders-api
+  title: Orders REST API
+  description: REST API exposed by the Orders service
+spec:
+  type: openapi
+  lifecycle: production
+  owner: orders-team
+  system: ecommerce-platform
+  definition: |
+    openapi: 3.0.3
+    info:
+      title: Orders API
+      version: 1.0.0
+    servers:
+      - url: http://orders.localhost:8080
+    paths:
+      /health:
+        get:
+          summary: Health check
+          responses:
+            '200':
+              description: Service is healthy
+      /orders:
+        get:
+          summary: List orders
+          responses:
+            '200':
+              description: Orders returned successfully

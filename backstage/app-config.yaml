@@ -188,11 +188,19 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+  - allow:
+      - Component
+      - System
+      - API
+      - Resource
+      - Location
+      - Group
+      - User
+      - Domain
   locations:
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: url
-      target: https://github.com/Badereddine-eng/platform-engineering-demo/blob/main/apps/orders-api/catalog-info.yaml
+      target: https://github.com/Badereddine-eng/platform-engineering-demo/blob/main/catalog/platform.yaml
 
     # Local example template
     - type: file

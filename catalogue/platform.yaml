@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: orders-team
+  title: Orders Team
+  description: Team responsible for the Orders domain
+spec:
+  type: team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: commerce
+  title: Commerce
+  description: Commerce business domain
+spec:
+  owner: orders-team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: ecommerce-platform
+  title: E-commerce Platform
+  description: Core services supporting the e-commerce platform
+spec:
+  owner: orders-team
+  domain: commerce
